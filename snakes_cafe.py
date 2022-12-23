@@ -59,22 +59,27 @@ def place_order():
 
     ask_again = True
     while ask_again:
-        print("What else would you like to order? or type \"quit\" to finish")
+        print("""
+    What else would you like to order? 
+    or type \"quit\" to finish
+    """)
         new_order = input("> ")
         if new_order == "quit":
             break
         if new_order in current_order:
             current_order[new_order] += 1
-            print(f"""Added another order of {new_order} to your order
+            print(f"""** Added {current_order[new_order]} orders of {new_order} to your order **
             """)
         else:
             current_order[new_order] = 1
-            print(f"""Added {new_order} to your order
+            print(f"""** Added {new_order} to your order **
             """)
 
     print(f"""
     Your order consists of : {current_order} 
-    thank you for your order, don't forget to tip your coder""")
+    thank you for your order, don't forget to tip your coder
+    
+    """)
 
 
 if __name__ == "__main__":
